@@ -4,5 +4,7 @@ jobs:
    job1:
      runs-on: ubuntu-22.04
      steps:
-       - name: Show Files
-         run: ls
+      - name: Checkout Code
+        uses: actions/checkout@v5
+      - name: Show Files
+        run: ls

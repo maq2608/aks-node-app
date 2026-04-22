@@ -1,8 +1,8 @@
 name: Hello World Workflow
-on: workflow_dispatch
+on: push
 jobs:
    job1:
      runs-on: ubuntu-22.04
      steps:
-       - name: Print karo hello
-         run: echo "Hello world"
+       - name: Show Files
+         run: ls

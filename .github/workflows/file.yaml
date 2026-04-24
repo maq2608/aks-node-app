@@ -2,21 +2,21 @@ name: Project Workflow
 on:
   push:
    branches: ['main']
- pull_request:
-   branches: ["dev","prod"]
+  pull_request:
+    branches: ["dev","prod"]
 jobs:
-   build-and-test:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v5
+    build-and-test:
+      runs-on: ubuntu-22.04
+      steps:
+          - name: Checkout Code
+            uses: actions/checkout@v5
         
-      - name: user nodejs version
-        uses: actions/setup-node@v6
+          - name: user nodejs version
+            uses: actions/setup-node@v6
         
-      - name: Install dependencies
-        run: npm install
+          - name: Install dependencies
+            run: npm install
         
-      - name: Build Project
-        run: npm run
+          - name: Build Project
+            run: npm run
         

@@ -21,9 +21,9 @@ jobs:
             uses: aquasecurity/trivy-action@v0.36.0
             with:
               scan-type: 'image'
-              image-ref: ${{ secrets.IMG_NAME }}:latest"
+              image-ref: ${{secrets.IMG_NAME}}:latest"
               format: 'table'
-              exit-code : '0'
+              exit-code: '0'
               ignore-unfixed: true
               
         

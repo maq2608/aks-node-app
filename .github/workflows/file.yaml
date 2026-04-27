@@ -15,15 +15,15 @@ jobs:
             uses: docker/setup-buildx-action@v4
         
           - name: Build Docker Image
-            run: docker.build -t ${{ secrets.IMAGE.NAME }}
+            run: docker.build -t ${{ secrets.IMAGE_NAME }}
         
           - name: Install Trivy
             uses: aquasecurity/trivy-actions@v0.36.0
             with:
               scan-type: 'image'
-              image-ref: ${{ secrets.IMAGE.NAME }}:latest"
+              image-ref: ${{ secrets.IMAGE_NAME }}:latest"
               format: 'table'
-              exit-code :'0'
+              exit-code : '0'
               ignore-unfixed: true
               
         

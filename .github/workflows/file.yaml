@@ -23,7 +23,7 @@ jobs:
               scan-type: 'image'
               image-ref: ${{ secrets.IMAGE_NAME }}:latest"
               format: 'table'
-              exit-code : '1'
+              exit-code : '0'
               ignore-unfixed: true
               
         

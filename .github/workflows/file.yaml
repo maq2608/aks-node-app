@@ -26,4 +26,20 @@ jobs:
               exit-code: '0'
               ignore-unfixed: true
               
+          - name: Login to ACR
+            uses: docker/login-action@v3
+            with:
+              registry: ${{ secrets.AZURE_REGISTRY_SERVER }}
+              username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
+              password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
+
+          - name: Tag Image for ACR
+            run: |
+             docker tag ${{ secrets.IMG_NAME }}: latest ${{ secrets.AZURE_REGISTRY_SERVER }}/${{ secrets.IMG_NAME }}:latest
+
+          - name: Push the image to ACR
+            run:
+             docker push ${{ secrets.AZURE_REGISTRY_SERVER }}/${{ secrets.AZURE_REGISTRY_SERVER }}
+          
+              
         
